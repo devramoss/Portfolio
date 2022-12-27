@@ -6,6 +6,8 @@ import EmailIcon from "../../assets/images/email_icon.png";
 import TelegramIcon from "../../assets/images/telegram_icon.svg";
 import LinkedinIcon from "../../assets/images/linkedin_icon.svg";
 import WhatsappIcon from "../../assets/images/whatsapp_icon.svg";
+import GitHubIcon from "../../assets/images/github_icon.svg";
+import {telegramLink, linkedinLink, whatsAppLink,gitHubLink} from "./links";
 
 const ContactContainer = styled.section`
     color: ${whiteColor};
@@ -33,11 +35,9 @@ const Icon = styled.img`
     height: 100%;
 `;
 
-
-
 export const ContactPage = () => {
     return (
-        <ContactContainer>
+        <ContactContainer id="contato">
             <Title text="Contato" />
             <Description
                 text="Caso você precise de 
@@ -51,14 +51,17 @@ export const ContactPage = () => {
                 <ContactLink href="mailto:devramoss2003@gmail.com">
                     <Icon src={EmailIcon} />
                 </ContactLink>
-                <ContactLink href="https://t.me/devramoss">
+                <ContactLink href={telegramLink} target="_blank">
                     <Icon src={TelegramIcon} />
                 </ContactLink>
-                <ContactLink href="https://www.linkedin.com/in/emilly-ramos-dev/">
+                <ContactLink href={linkedinLink} target="_blank">
                     <Icon src={LinkedinIcon} />
                 </ContactLink>
-                <ContactLink href="https://api.whatsapp.com/send?1=pt_BR&phone=5532998317896&fbclid=PAAaYSm4UfcKBCdQQpzTirtUbdX1GqUVJMnqA6Fk_JWp2FKxkfTxyiKpoDJ1E">
+                <ContactLink href={whatsAppLink} target="_blank">
                     <Icon src={WhatsappIcon} />
+                </ContactLink>
+                <ContactLink href={gitHubLink} target="_blank">
+                    <Icon src={GitHubIcon} />
                 </ContactLink>
             </ContactLinkContainer>
         </ContactContainer>

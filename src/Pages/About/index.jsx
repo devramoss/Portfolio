@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {whiteColor} from "../../assets/variables";
+import {RedColor, whiteColor} from "../../assets/variables";
 import {Title} from "../../Components/Title";
 import {Description} from "../../Components/DescriptionBox";
 import Emilly from "../../assets/images/Emilly.jpeg";
@@ -16,14 +16,17 @@ const SubTitle = styled.h3`
 `;
 
 const Image = styled.img`
+    border: 1.5px solid ${RedColor};
     border-radius: 50%;
     width: 256px;
     height: 256px;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
 `;
 
 export const AboutPage = () => {
     return(
-        <AboutContainer>
+        <AboutContainer id="sobre">
             <Image src={Emilly}/>
             <Title text="Olá, meu nome é Emilly Ramos!"/>
             <SubTitle>

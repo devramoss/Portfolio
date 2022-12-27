@@ -7,7 +7,7 @@ import {ProjectsPage} from "./Pages/Projects";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App" id="/">
         <GlobalStyle/>
         <Header/>
         <AboutPage/>

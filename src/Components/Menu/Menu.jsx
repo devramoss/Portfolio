@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {useState} from "react";
-import {whiteColor} from "../../assets/variables";
+import {Link} from "react-scroll";
+import {RedColor} from "../../assets/variables";
 import menu_icon from "../../assets/images/hamburguerMenu.svg";
 import close_menu_icon from "../../assets/images/closeMenu.svg";
 
@@ -9,12 +10,15 @@ const StyledMenu = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    backdrop-filter: blur(${(props)=>props.active?10:0}px);
-    position: absolute;
+    backdrop-filter: blur(${(props)=>props.active?50:0}px);
+    background-color: "#000000";
+    color: ${RedColor};
+    position: ${(props)=>props.active?"fixed":"absolute"};
     top: 0;
     right: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 25px;
 `;
@@ -42,12 +46,6 @@ const MenuOption = styled.li`
     margin: 2rem;
 `;
 
-const MenuOptionLink = styled.a`
-    text-decoration: none;
-    cursor: pointer;
-    color: ${whiteColor};
-`;
-
 export const Menu = () =>{
     const [active, setActive] = useState(false);
     const [imageSource, setImageSource] = useState(menu_icon)
@@ -66,29 +64,24 @@ export const Menu = () =>{
             <HamburguerMenuIcon src={imageSource} onClick={handleMenuOptions}/>
             <MenuOptionsContainer active={active}>
                 <MenuOption>
-                    <MenuOptionLink href="#">
+                    <Link to="/" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuOptions}>
                         HOME
-                    </MenuOptionLink>
+                    </Link>
                 </MenuOption>
                 <MenuOption>
-                    <MenuOptionLink href="#">
+                    <Link to="sobre" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuOptions}>
                         SOBRE
-                    </MenuOptionLink>
+                    </Link>
                 </MenuOption>
                 <MenuOption>
-                    <MenuOptionLink href="#">
-                        SERVIÇOS
-                    </MenuOptionLink>
+                    <Link to="projetos" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuOptions}>
+                        PROJETOS
+                    </Link>
                 </MenuOption>
                 <MenuOption>
-                    <MenuOptionLink href="#">
-                        PORTFÓLIO
-                    </MenuOptionLink>
-                </MenuOption>
-                <MenuOption>
-                    <MenuOptionLink href="#">
-                        FALE CONOSCO
-                    </MenuOptionLink>
+                    <Link to="contato" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuOptions}>
+                        CONTATO
+                    </Link>
                 </MenuOption>
             </MenuOptionsContainer>
         </StyledMenu>

@@ -5,7 +5,8 @@ import ToDoList from "../../assets/images/ToDoList.png";
 import CadastroVacinacao from "../../assets/images/CadastroVacinacao.png";
 import ContextNaRed from "../../assets/images/ContextNaRed.png";
 import ExternalLink from "../../assets/images/external_link.svg";
-import { Description } from "../../Components/DescriptionBox";
+import {Description} from "../../Components/DescriptionBox";
+import {contextNaRedLink, letsDoItLink, cadastroIdososLink} from "./links";
 
 const ProjectsContainer = styled.section`
     color: ${whiteColor};
@@ -15,6 +16,7 @@ const ProjectsContainer = styled.section`
 const ImageProject = styled.img`
     width: 320px;
     height: 200px;
+    border: 2px solid ${RedColor};
     border-radius: 10px;
 `;
 
@@ -25,8 +27,9 @@ const ExternalLinkIcon = styled.img`
 const ProjectName = styled.span`
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    color: ${RedColor};
     font-weight: bold;
+    font-size: 25px;
+    color: ${RedColor};
     margin: 15px 0;
 `;
 
@@ -40,12 +43,11 @@ const TextBox = styled.div`
     justify-content: space-between;
 `;
 
-
 const ProjectLink = styled.a``;
 
 export const ProjectsPage = () => {
     return(
-        <ProjectsContainer>
+        <ProjectsContainer id="projetos">
             <Title text="Meus projetos"/>
             <Project>
                 <ImageProject src={ToDoList}/>
@@ -53,7 +55,7 @@ export const ProjectsPage = () => {
                     <ProjectName>
                         Let´s Do It
                     </ProjectName>
-                    <ProjectLink>
+                    <ProjectLink href={letsDoItLink} target="_blank">
                         <ExternalLinkIcon src={ExternalLink}/>
                     </ProjectLink>
                 </TextBox>
@@ -61,41 +63,47 @@ export const ProjectsPage = () => {
                 <Description text="É uma aplicação
                     web responsiva que funciona 
                     como um bloco de notas para
-                    você anotar suas ideias"
+                    você anotar suas coisas."
                 />
             </Project>
+
             <Project>
                 <ImageProject src={CadastroVacinacao}/>
+
                 <TextBox>
                     <ProjectName>
                         Cadastro de Idosos
                     </ProjectName>
-                    <ProjectLink>
+                    <ProjectLink href={cadastroIdososLink} target="_blank">
                             <ExternalLinkIcon src={ExternalLink}/>
                     </ProjectLink>
                 </TextBox>
+
                 <Description 
-                    text="Formulário criado para com o 
+                    text="Formulário criado com o 
                     intuito de auxiliar os profissionais 
                     da saúde em Cataguases no cadastro de
-                    idosos para a Vacinação."
+                    idosos para a vacinação de Covid."
                 />
             </Project>
+
             <Project>
                 <ImageProject src={ContextNaRed}/>
                 <TextBox>
                     <ProjectName>
                         ContextNaRed
                     </ProjectName>
-                    <ProjectLink>
+                    <ProjectLink href={contextNaRedLink} target="_blank">
                             <ExternalLinkIcon src={ExternalLink}/>
                     </ProjectLink>
                 </TextBox>
+
                 <Description
                     text="É um site com diversos contextos
                     (alusões históricas) fácil de memorizar
                     que podem ser usados na
-                    redação do ENEM."
+                    redação do ENEM(Exame Nacional do Ensino
+                    Médio)."
                 />
             </Project>
             
