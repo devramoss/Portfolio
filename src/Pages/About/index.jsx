@@ -37,12 +37,17 @@ export const AboutPage = () => {
                 Engenharia de Computação no 
                 Centro Federal de Educação
                 Tecnológica de Minas Gerais 
-                em Leopoldina."
+                em Leopoldina. Nesta mesma instituição 
+                participo de uma empresa júnior 
+                chamada Encautech, onde sou assessora de
+                Marketing."
             />
             <Description
-                text="Atualmente minha especialidade é em JavaScript,
-                entretanto, na faculdade já implementei
-                algumas coisas em C, C++ e Java."
+                text="Possuo experiência em HTML(HyperText Markup Language),
+                CSS(Cascading Style Sheets), Wordpress, JavaScript e sua biblioteca
+                para construção de interfaces React.
+                Além disso, na faculdade já implementei coisas em C, C++ e 
+                Java."
             />
         </AboutContainer>
     );

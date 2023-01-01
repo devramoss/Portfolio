@@ -45,7 +45,8 @@ export const ContactPage = () => {
                 ou artes para postar em suas
                 redes sociais a Ramos Soluções
                 Tecnológicas pode lhe ajudar. 
-                Entre em contato conosco!"
+                Entre em contato comigo através
+                dos links abaixo!"
             />
             <ContactLinkContainer>
                 <ContactLink href="mailto:devramoss2003@gmail.com">
